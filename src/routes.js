@@ -9,14 +9,18 @@ import LoadingScreen from 'src/components/LoadingScreen';
 const LoginView = lazy(() => import('src/views/auth/LoginView'));
 const NotFoundView = lazy(() => import('src/views/NotFoundView'));
 
+const GuestHomeView = lazy(() => import('src/views/guest/HomeView'));
+
+const UserHomeView = lazy(() => import('src/views/user/HomeView'));
+
 const RenderRoutes = () => {
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
   return (
     <Suspense fallback={<LoadingScreen />}>
       <Routes>
         {!isAuthenticated && (
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<>Home</>} />
+            <Route index element={<GuestHomeView />} />
             <Route path="*" element={<NotFoundView />} />
           </Route>
         )}
@@ -25,8 +29,14 @@ const RenderRoutes = () => {
           <Route path="login" element={<LoginView />} />
           <Route path="*" element={<NotFoundView />} />
         </Route>
+        {user?.role?.name === 'User' && (
+          <Route path="/" element={<DashboardLayout />}>
+            <Route index element={<UserHomeView />} />
+            <Route path="*" element={<NotFoundView />} />
+          </Route>
+        )}
         <Route path="/" element={<DashboardLayout />}>
-          <Route index element={<>Dashboard</>} />
+          <Route index element={<UserHomeView />} />
           <Route path="*" element={<NotFoundView />} />
         </Route>
       </Routes>

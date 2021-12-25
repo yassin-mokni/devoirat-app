@@ -1,0 +1,12 @@
+.sidebar {
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #ffffff;
+  padding: 60px 0;
+  & > .logo {
+    width: 240px;
+    margin: 0 auto;
+  }
+}

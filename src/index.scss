@@ -2,7 +2,9 @@
 
 @use '/src/views/auth';
 
+@use '/src/layouts/MainLayout';
 @use '/src/layouts/AuthLayout';
+@use '/src/layouts/DashboardLayout';
 
 * {
   font-family: 'Roboto', sans-serif;

@@ -1,18 +1,18 @@
-import { Outlet, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { logout } from 'src/store/slices/auth';
+import { Outlet } from 'react-router-dom';
 import AuthGuard from 'src/components/AuthGuard';
+import Sidebar from './Sidebar';
+import Header from './Header';
 
 const DashboardLayout = () => {
-  const dispatch = useDispatch();
   return (
     <AuthGuard>
-      <p>Dash</p>
-      <Link to="/">App</Link>
-      <Link to="/exams">Exams</Link>
-      <Link to="/xyz">Xyz</Link>
-      <button onClick={() => dispatch(logout())}>Logout</button>
-      <Outlet />
+      <div className="dashboard-layout">
+        <Sidebar />
+        <div className="container">
+          <Header />
+          <Outlet />
+        </div>
+      </div>
     </AuthGuard>
   );
 };
