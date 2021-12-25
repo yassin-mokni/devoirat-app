@@ -1,3 +1,212 @@
 .auth-view {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 140px;
+  & > .title {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 {
+      bottom: 60px;
+    }
+  }
+  & > .socialAuth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    & > * {
+      margin: 0 20px;
+      width: 56px;
+      height: 56px;
+      padding: 0;
+      min-width: unset;
+      border-radius: 12px;
+    }
+  }
+  & > .divider {
+    margin-bottom: 6px;
+    &::before,
+    &::after {
+      border-top: 3px solid #d9dbe9;
+      top: 0;
+    }
+    & > span {
+      color: #d9dbe9;
+      padding: 0 20px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+  & > form {
+    margin-bottom: 38px;
+    & > .button {
+      height: 58px;
+      & > :nth-child(1) {
+        margin-left: 20px;
+      }
+    }
+    & > .input {
+      margin-bottom: 22px;
+      position: relative;
+      & > .MuiOutlinedInput-root {
+        height: 56px;
+        & > .MuiOutlinedInput-notchedOutline {
+          border-radius: 12px;
+          border: 2px solid #d9dbe9;
+        }
+        &.Mui-error {
+          & > .MuiOutlinedInput-notchedOutline {
+            border-color: #ef4f4e;
+          }
+        }
+        & > .MuiOutlinedInput-input {
+          font-size: 22px;
+          color: #1b2830;
+          &::-webkit-input-placeholder {
+            opacity: 1;
+            color: #1b2830;
+          }
+        }
+      }
+      & > .MuiFormHelperText-root {
+        position: absolute;
+        bottom: -28px;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 2px;
+        &.Mui-error {
+          color: #ef4f4e;
+        }
+      }
+    }
+    & > .loginControlLabel {
+      margin-left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      margin-bottom: 28px;
+      & > * {
+        font-size: 18px;
+        color: #1b2830;
+        font-weight: 600;
+      }
+      & > .MuiSwitch-root {
+        height: 52px;
+        width: 80px;
+        font-size: 20px;
+        .MuiSwitch-switchBase {
+          transform: translate(5px, 5px);
+          &.Mui-checked {
+            transform: translate(33px, 5px);
+            .MuiSwitch-thumb {
+              color: white;
+            }
+            & ~ .MuiSwitch-track {
+              background-color: #23c1e8;
+              box-shadow: 0px 3px 1px -2px rgb(35 193 232 / 20%),
+                0px 2px 2px 0px rgb(35 193 232 / 14%),
+                0px 1px 5px 0px rgb(35 193 232 / 12%);
+            }
+          }
+          .MuiSwitch-thumb {
+            color: white;
+            width: 24px;
+            height: 24px;
+          }
+          .MuiSwitch-input {
+            // color: green;
+          }
+        }
+        .MuiSwitch-track {
+          border-radius: 44px;
+          opacity: 1 !important;
+          background-color: #d9dbe9;
+          box-shadow: 0px 3px 1px -2px rgb(217 219 233 / 20%),
+            0px 2px 2px 0px rgb(217 219 233 / 14%),
+            0px 1px 5px 0px rgb(217 219 233 / 12%);
+        }
+      }
+    }
+  }
+  & > .link {
+    display: flex;
+    flex-direction: column;
+    color: #1b2830;
+    margin-bottom: 12px;
+    & > span {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    & > a {
+      font-size: 24px;
+      font-weight: 600;
+      color: #23c1e8;
+    }
+  }
+  & > .form {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.de-btn {
+  text-transform: none;
+  transition: all 300ms ease;
+  &.co {
+    &-primary {
+      color: #ffffff;
+      background: #23c1e8;
+      box-shadow: 0px 3px 1px -2px rgb(35 193 232 / 20%),
+        0px 2px 2px 0px rgb(35 193 232 / 14%),
+        0px 1px 5px 0px rgb(35 193 232 / 12%);
+      &:hover {
+        background: darken(#23c1e8, 8%);
+        box-shadow: 0px 2px 4px -1px rgb(35 193 232 / 20%),
+          0px 4px 5px 0px rgb(35 193 232 / 14%),
+          0px 1px 10px 0px rgb(35 193 232 / 12%);
+      }
+    }
+    &-facebook {
+      color: #ffffff;
+      background: #05acff;
+      box-shadow: 0px 3px 1px -2px rgb(5 172 255 / 20%),
+        0px 2px 2px 0px rgb(5 172 255 / 14%),
+        0px 1px 5px 0px rgb(5 172 255 / 12%);
+      &:hover {
+        background: darken(#05acff, 8%);
+        box-shadow: 0px 2px 4px -1px rgb(5 172 255 / 20%),
+          0px 4px 5px 0px rgb(5 172 255 / 14%),
+          0px 1px 10px 0px rgb(5 172 255 / 12%);
+      }
+    }
+    &-google {
+      color: #ffffff;
+      background: #ef4f4e;
+      box-shadow: 0px 3px 1px -2px rgb(239 79 78 / 20%),
+        0px 2px 2px 0px rgb(239 79 78 / 14%),
+        0px 1px 5px 0px rgb(239 79 78 / 12%);
+      &:hover {
+        background: darken(#ef4f4e, 8%);
+        box-shadow: 0px 2px 4px -1px rgb(239 79 78 / 20%),
+          0px 4px 5px 0px rgb(239 79 78 / 14%),
+          0px 1px 10px 0px rgb(239 79 78 / 12%);
+      }
+    }
+  }
+  &.sz {
+    &-l {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  &.rounded {
+    border-radius: 12px;
+  }
 }

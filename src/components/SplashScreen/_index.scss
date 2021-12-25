@@ -7,7 +7,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  & .logo {
+  & a > .logo {
     width: 240px !important;
     min-width: unset !important;
     margin-top: 65px;
@@ -24,14 +24,14 @@
       bottom: -28px;
     }
   }
-  &::after {
-    content: '';
-    background: #23c1e8;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 50%;
-    z-index: -1;
-  }
+  // &::after {
+  //   content: '';
+  //   background: #23c1e8;
+  //   position: fixed;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 50%;
+  //   z-index: -1;
+  // }
 }

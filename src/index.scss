@@ -5,24 +5,24 @@
 @use '/src/layouts/AuthLayout';
 
 * {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   height: 100%;
   width: 100%;
-  margin: 0 auto;
-  max-width: 1500px;
+  // margin: 0 auto;
+  // max-width: 1500px;
 }
 
 #root {
