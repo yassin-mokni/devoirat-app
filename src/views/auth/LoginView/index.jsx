@@ -1,6 +1,6 @@
 const LoginView = () => {
   return (
-    <main>
+    <main className="auth-view">
       <span>Login view</span>
     </main>
   );

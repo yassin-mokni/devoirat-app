@@ -22,7 +22,7 @@ const RenderRoutes = () => {
         )}
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Navigate to="login" />} />
-          <Route path="login" element={<>Login</>} />
+          <Route path="login" element={<LoginView />} />
           <Route path="*" element={<NotFoundView />} />
         </Route>
         <Route path="/" element={<DashboardLayout />}>

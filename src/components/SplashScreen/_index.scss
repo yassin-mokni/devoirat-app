@@ -1,0 +1,37 @@
+.splash-screen {
+  width: 100%;
+  height: 100%;
+  background: #23c1e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  & .logo {
+    width: 240px !important;
+    min-width: unset !important;
+    margin-top: 65px;
+  }
+  & > .pattern {
+    background: url('/assets/images/pattern-splash.svg');
+    height: 412px;
+    width: 100%;
+    position: absolute;
+    &.top {
+      top: 0;
+    }
+    &.bottom {
+      bottom: -28px;
+    }
+  }
+  &::after {
+    content: '';
+    background: #23c1e8;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 50%;
+    z-index: -1;
+  }
+}
