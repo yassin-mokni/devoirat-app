@@ -1,9 +1,7 @@
-import { Link } from 'react-router-dom';
-
 const HomeView = () => {
   return (
     <main className="home-view">
-      <Link to="/auth">Login</Link>
+      <h1>Liste des matières</h1>
     </main>
   );
 };

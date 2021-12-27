@@ -1,12 +1,105 @@
-.sidebar {
-  width: 410px;
+.dashboard-layout > .sidebar {
+  width: 320px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   background: #ffffff;
   padding: 60px 0;
-  & > .logo {
-    width: 240px;
-    margin: 0 auto;
+  padding-bottom: 42px;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    & > .logo {
+      width: 240px;
+      margin: 0 auto;
+      margin-bottom: 58px;
+    }
+    & > nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-bottom: 42px;
+      & > .nav-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 36px;
+        width: 100%;
+        height: 42px;
+        color: #1b2830;
+        font-size: 20px;
+        gap: 12px;
+        & > svg {
+          .shape {
+            fill: #23c1e8;
+          }
+          &.heart-color {
+            .shape {
+              fill: #e51d35;
+            }
+          }
+        }
+        &.active {
+          background: #d7f7ff;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: #23c1e8;
+          }
+        }
+      }
+      & > .nav-item-button {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 36px;
+        width: 100%;
+        height: 42px;
+        background: #ffffff;
+        border-radius: 0;
+        outline: none;
+        border: none;
+        color: #1b2830;
+        font-size: 20px;
+        gap: 12px;
+        cursor: pointer;
+        &:active {
+          background: #f4f8ff;
+        }
+        & > svg {
+          .shape {
+            fill: #23c1e8;
+          }
+        }
+      }
+    }
+  }
+  & > footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 36px;
+    font-size: 14px;
+    & > .title {
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
 }
