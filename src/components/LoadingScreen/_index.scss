@@ -1,0 +1,10 @@
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f8ff;
+  height: 100%;
+  & > .logo {
+    width: 200px;
+  }
+}
