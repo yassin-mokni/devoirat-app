@@ -14,6 +14,7 @@ const GuestHomeView = lazy(() => import('src/views/guest/HomeView'));
 
 const UserHomeView = lazy(() => import('src/views/user/HomeView'));
 
+const AdminLoginView = lazy(() => import('src/views/auth/AdminLoginView'));
 const AdminHomeView = lazy(() => import('src/views/admin/HomeView'));
 
 const RenderRoutes = () => {
@@ -30,6 +31,11 @@ const RenderRoutes = () => {
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Navigate to="login" />} />
           <Route path="login" element={<LoginView />} />
+          <Route path="*" element={<NotFoundView />} />
+        </Route>
+        <Route path="/secret" element={<AuthLayout />}>
+          <Route index element={<Navigate to="admin" />} />
+          <Route path="admin" element={<AdminLoginView />} />
           <Route path="*" element={<NotFoundView />} />
         </Route>
         {user?.role?.name === 'User' && (

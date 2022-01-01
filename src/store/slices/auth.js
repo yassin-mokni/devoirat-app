@@ -4,7 +4,8 @@ import axios from 'src/utils/axios';
 const initialState = {
   isAuthenticated: false,
   isInitialised: true,
-  user: null
+  user: null,
+  error: null
 };
 
 export const setSession = (token) => {
@@ -36,6 +37,25 @@ export const login = createAsyncThunk('auth/login', async (query) => {
   }
 });
 
+export const adminLogin = createAsyncThunk('auth/adminLogin', async (query) => {
+  const { email, password } = query;
+  let data;
+  try {
+    const response = await axios.post(`/api/v1/auth/admin/email/login`, {
+      email,
+      password
+    });
+    data = await response.data;
+    if ((response.status = 200)) {
+      return data;
+    }
+    throw new Error(response.statusText);
+  } catch (err) {
+    console.log(err);
+    return Promise.reject(err.message ? err.message : data?.message);
+  }
+});
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -53,11 +73,29 @@ export const authSlice = createSlice({
     }
   },
   extraReducers: {
+    [login.pending]: (state) => {
+      state.error = null;
+    },
     [login.fulfilled]: (state, action) => {
       const { token, user } = action.payload;
       setSession(token);
       state.isAuthenticated = true;
       state.user = user;
+    },
+    [login.rejected]: (state) => {
+      state.error = 'Incorrect credentials!';
+    },
+    [adminLogin.pending]: (state) => {
+      state.error = null;
+    },
+    [adminLogin.fulfilled]: (state, action) => {
+      const { token, user } = action.payload;
+      setSession(token);
+      state.isAuthenticated = true;
+      state.user = user;
+    },
+    [adminLogin.rejected]: (state) => {
+      state.error = 'Incorrect credentials!';
     }
   }
 });
