@@ -43,7 +43,7 @@ const Sidebar = () => {
           <Link to="/profile">
             <span className="name">{`${user?.firstName} ${user?.lastName}`}</span>
           </Link>
-          <span className="division">8ème de base</span>
+          <span className="role">Admin</span>
         </div>
         <nav>
           <SidebarItem icon={<HomeICO />} to="/">
@@ -51,15 +51,6 @@ const Sidebar = () => {
           </SidebarItem>
           <SidebarItem icon={<GraduationCapICO />} to="/division">
             Matières
-          </SidebarItem>
-          <SidebarItem
-            icon={<HeartICO className="heart-color" />}
-            to="/favorites"
-          >
-            Liste de favoris
-          </SidebarItem>
-          <SidebarItem icon={<BackInTimeICO />} to="/historical">
-            Historique
           </SidebarItem>
           <SidebarItem icon={<UserICO />} to="/profile">
             Mon profil
@@ -71,7 +62,6 @@ const Sidebar = () => {
             Se déconnecter
           </SidebarItemButton>
         </nav>
-        <span className="pub"></span>
       </div>
       <footer>
         <p className="title">Devoirat.net</p>

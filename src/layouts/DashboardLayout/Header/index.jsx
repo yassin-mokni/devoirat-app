@@ -1,7 +1,12 @@
+import { Link } from 'react-router-dom';
+import AVATAR from 'src/assets/images/avatar.png';
+
 const Header = () => {
   return (
     <div className="header">
-      <span></span>
+      <Link to="/profile">
+        <img className="avatar" alt="user-avatar" src={AVATAR} />
+      </Link>
     </div>
   );
 };

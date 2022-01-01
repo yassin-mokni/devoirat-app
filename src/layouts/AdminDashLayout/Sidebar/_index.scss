@@ -1,4 +1,4 @@
-.dashboard-layout > .sidebar {
+.admin-dash-layout > .sidebar {
   width: 320px;
   min-width: 320px;
   display: flex;
@@ -44,7 +44,7 @@
           text-transform: capitalize;
         }
       }
-      & > .division {
+      & > .role {
         font-size: 18px;
         margin-bottom: 22px;
       }
