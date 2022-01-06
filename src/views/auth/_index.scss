@@ -81,6 +81,9 @@
           color: #ef4f4e;
         }
       }
+      &.register-last-input {
+        margin-bottom: 60px;
+      }
     }
     & > .loginControlLabel {
       margin-left: 0;
@@ -166,7 +169,7 @@
 }
 
 .de-btn {
-  text-transform: none;
+  text-transform: none !important;
   transition: all 300ms ease;
   &.co {
     &-primary {

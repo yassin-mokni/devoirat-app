@@ -8,6 +8,7 @@ import AdminDashboardLayout from 'src/layouts/AdminDashLayout';
 import LoadingScreen from 'src/components/LoadingScreen';
 
 const LoginView = lazy(() => import('src/views/auth/LoginView'));
+const RegisterView = lazy(() => import('src/views/auth/RegisterView'));
 const NotFoundView = lazy(() => import('src/views/NotFoundView'));
 
 const GuestHomeView = lazy(() => import('src/views/guest/HomeView'));
@@ -31,6 +32,7 @@ const RenderRoutes = () => {
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Navigate to="login" />} />
           <Route path="login" element={<LoginView />} />
+          <Route path="register" element={<RegisterView />} />
           <Route path="*" element={<NotFoundView />} />
         </Route>
         <Route path="/secret" element={<AuthLayout />}>

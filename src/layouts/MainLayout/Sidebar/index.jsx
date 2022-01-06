@@ -171,7 +171,9 @@ const Sidebar = () => {
             </SidebarItemLink>
           </SidebarItem>
         </nav>
-        <Button className="de-button primary rounded">Créer un compte</Button>
+        <Link to="auth/register">
+          <Button className="de-button primary rounded">Créer un compte</Button>
+        </Link>
         <span className="pub"></span>
       </div>
       <footer>

@@ -37,6 +37,27 @@ export const login = createAsyncThunk('auth/login', async (query) => {
   }
 });
 
+export const register = createAsyncThunk('auth/register', async (query) => {
+  const { email, password } = query;
+  let data;
+  try {
+    const response = await axios.post(`/api/v1/auth/email/register`, {
+      email,
+      password,
+      firstName: 'John',
+      lastName: 'Doe'
+    });
+    data = await response.data;
+    if ((response.status = 200)) {
+      return data;
+    }
+    throw new Error(response.statusText);
+  } catch (err) {
+    console.log(err);
+    return Promise.reject(err.message ? err.message : data?.message);
+  }
+});
+
 export const adminLogin = createAsyncThunk('auth/adminLogin', async (query) => {
   const { email, password } = query;
   let data;
@@ -96,6 +117,16 @@ export const authSlice = createSlice({
     },
     [adminLogin.rejected]: (state) => {
       state.error = 'Incorrect credentials!';
+    },
+    [register.pending]: (state) => {
+      state.error = null;
+    },
+    [register.fulfilled]: (state, action) => {
+      console.log(action.payload);
+    },
+    [register.rejected]: (state, action) => {
+      state.error = 'Error Register!';
+      console.log(action);
     }
   }
 });

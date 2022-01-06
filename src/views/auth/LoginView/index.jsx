@@ -141,7 +141,7 @@ const LoginView = () => {
       </Formik>
       <div className="link">
         <span>Vous n'avez pas encore de compte?</span>
-        <Link to="/auth">Créer un compte</Link>
+        <Link to="/auth/register">Créer un compte</Link>
       </div>
       <div className="link">
         <span>Mot de passe oublié?</span>

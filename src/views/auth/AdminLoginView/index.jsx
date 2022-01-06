@@ -6,7 +6,7 @@ import { Button, TextField, Box, FormHelperText, Alert } from '@mui/material';
 import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import ARROW from 'src/assets/images/icons/ArrowRightAuth.svg';
 
-const LoginView = () => {
+const AdminLoginView = () => {
   const dispatch = useDispatch();
   const { error } = useSelector((state) => state.auth);
   const isMountedRef = useIsMountedRef();
@@ -112,4 +112,4 @@ const LoginView = () => {
   );
 };
 
-export default LoginView;
+export default AdminLoginView;
